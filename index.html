@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站 - Xuanpu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== 全局固定导航栏 ===================== -->
+<header class="global-nav">
+    <button class="btn-explore" id="exploreBtn">
+        <span class="icon-sparkle">✨</span> 探索我
+    </button>
+    <div class="nav-menu">
+        <button class="btn-nav btn-purple" id="navStartup">创业经历</button>
+        <button class="btn-nav btn-blue"   id="navProject">项目经历</button>
+        <button class="btn-nav btn-yellow" id="navAbout">个人简介</button>
+    </div>
+</header>
+
+<!-- 全局探索我弹窗 -->
+<div id="exploreModal" class="explore-modal hidden">
+    <div class="modal-content">
+        <div class="modal-top-info">
+            <div class="info-box location-time">
+                <div class="location"><span class="icon">📍</span> Shenzhen, China</div>
+                <div class="time" id="liveTime">10:42:59 PM</div>
+            </div>
+            <div class="info-box temp">
+                <div class="label"><span class="icon">🌡️</span> 体温</div>
+                <div class="value">36.6°C</div>
+            </div>
+            <div class="info-box heart-rate">
+                <div class="label"><span class="icon">♡</span> 心率</div>
+                <div class="value">62</div>
+            </div>
+            <div class="info-box birthday">
+                <div class="label"><span class="icon">🎂</span> 生产日期</div>
+                <div class="value">2006/06/06</div>
+            </div>
+        </div>
+        <div class="modal-status-section">
+            <div class="status-header">
+                <h2>角色状态</h2>
+                <span class="status-subtitle">CHARACTER STATUS</span>
+            </div>
+            <div class="status-list">
+                <div class="status-item"><div class="status-label"><span class="icon">♡</span> 心情值</div><div class="progress-bar"><div class="progress-fill" style="width:87%"></div></div><div class="status-num">87</div></div>
+                <div class="status-item"><div class="status-label"><span class="icon">⚡</span> 精力值</div><div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div><div class="status-num">72</div></div>
+                <div class="status-item"><div class="status-label"><span class="icon">🍔</span> 饥饿值</div><div class="progress-bar"><div class="progress-fill" style="width:22%"></div></div><div class="status-num">22</div></div>
+                <div class="status-item"><div class="status-label"><span class="icon">🛡️</span> 生命值</div><div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div><div class="status-num">95</div></div>
+                <div class="status-item"><div class="status-label"><span class="icon">🌙</span> 清醒度</div><div class="progress-bar"><div class="progress-fill" style="width:64%"></div></div><div class="status-num">64</div></div>
+                <div class="status-item"><div class="status-label"><span class="icon">👥</span> 社交电量</div><div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div><div class="status-num">20</div></div>
+                <div class="status-item"><div class="status-label"><span class="icon">💡</span> 灵感库存</div><div class="progress-bar"><div class="progress-fill" style="width:89%"></div></div><div class="status-num">89</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== 页面内容区 ===================== -->
+<div id="app">
+
+    <section id="page1" class="page page1-new">
+    <!-- 细格线背景通过CSS实现 -->
+    <div class="p1-grid"></div>
+
+    <!-- 大标题 -->
+    <div class="p1-hero-text">
+        <div class="p1-title">HI I'M XUANPU</div>
+        <div class="p1-subtitle">Curiosity, in motion.</div>
+    </div>
+
+    <!-- 头像 -->
+    <div class="p1-avatar">
+        <img src="avatar.png" alt="Xuanpu">
+    </div>
+
+
+    <!-- 左下角 -->
+    <div class="hero-bottom-left">
+        <button class="btn-circle-outline" id="nextBtn">↓</button>
+        <button class="btn-capsule-outline pop-in" style="animation-delay:0.5s">CUHK AI MKT</button>
+    </div>
+    <div class="bottom-right-star pop-in" style="animation-delay:0.7s">✦</div>
+</section>
+
+    <!-- 过渡区：MY STORY BEGINS HERE -->
+    <section id="page-transition" class="page page-transition">
+        <div class="transition-content">
+            <div class="transition-big-text">
+                <div class="transition-line"><span class="reveal-text tl-1">MY STORY</span></div>
+                <div class="transition-line"><span class="reveal-text tl-2">BEGINS HERE.</span></div>
+            </div>
+            <p class="transition-sub reveal-text tl-3">Curiosity turned into action.</p>
+            <p class="transition-small tl-4"></p>
+        </div>
+    </section>
+
+    <!-- 第二页：一瓯茶 -->
+    <section id="page2" class="page">
+        <div class="page2-card">
+        <div class="tea-text-content">
+            <h2 class="tea-title animate-item from-left">一瓯茶学生创业股东<br><span>(港中深最大茶饮店)</span></h2>
+            <p class="tea-desc animate-item from-left" style="--delay:0.12s">
+                把一瓯茶作为真实实验场，<br>
+                在产品、AIGC、营销与数据中，<br>
+                不断试错、迭代，把想法落地。
+            </p>
+        </div>
+        <div class="floating-tags">
+            <button class="tag-btn tag-aigc animate-item from-bottom"    style="--delay:0.20s" id="btnAigc">AIGC +</button>
+            <button class="tag-btn tag-data animate-item from-bottom" style="--delay:0.28s" id="btnData">数据 +</button>
+            <button class="tag-btn tag-product animate-item from-bottom" style="--delay:0.36s" id="btnProduct">产品 +</button>
+            <button class="tag-btn tag-market animate-item from-bottom"  style="--delay:0.44s" id="btnMarket">营销 +</button>
+        </div>
+        <div class="info-card animate-item from-right" style="--delay:0.18s">
+            <h3>AIGC / 屏幕广告</h3>
+            <ul>
+                <li>门店广告画面设计</li>
+                <li>产品图与海报生成</li>
+                <li>AI 工作流落地</li>
+            </ul>
+            <button class="btn-card-arrow">→</button>
+        </div>
+        <div class="info-card info-card-product animate-item from-right hidden" style="--delay:0.18s">
+            <h3>产品 / 饮品研发</h3>
+            <ul>
+                <li>主导酸奶系列上新</li>
+                <li>20+ 款产品图统一视觉</li>
+                <li>薯塔联名福利套餐</li>
+            </ul>
+            <button class="btn-card-arrow">→</button>
+        </div>
+        <div class="info-card info-card-market animate-item from-right hidden" style="--delay:0.18s">
+            <h3>营销 / 校园活动</h3>
+            <ul>
+                <li>新品试喝 & 首发折扣</li>
+                <li>期末发疯周限时活动</li>
+                <li>八周年品牌门店屏幕</li>
+            </ul>
+            <button class="btn-card-arrow">→</button>
+        </div>
+        <div class="tea-bottom-left animate-item from-left" style="--delay:0.32s">
+            <button class="btn-circle-brown">→</button>
+            <div class="click-hint"><span class="hand-icon">👆</span> 点击店内元素，探索我的创业现场</div>
+        </div>
+        </div>
+    </section>
+</div>
+
+<!-- ===================== AIGC 弹窗 ===================== -->
+<div id="aigcModal" class="aigc-modal hidden">
+    <div class="aigc-modal-content">
+        <button id="closeAigcBtn" class="btn-close-aigc">✖</button>
+        <div class="aigc-top-section">
+            <div class="aigc-intro">
+                <div class="tag-label">✨ AIGC / Creative Lab</div>
+                <h1 class="aigc-main-title">AIGC / Creative Lab</h1>
+                <h2 class="aigc-sub-title">用 AI 为一瓯茶搭建视觉生产力。</h2>
+                <p class="aigc-desc">从产品图生成 Agent、门店海报，到小红书创意内容，<br>我用 AIGC 提升一瓯茶的视觉生产效率。</p>
+                <div class="cup-icon">🥤</div>
+            </div>
+            <div class="aigc-card agent-card">
+                <div class="agent-left-content">
+                    <div class="card-num">01</div>
+                    <h3 class="card-title">一瓯茶产品图生成 Agent</h3>
+                    <p class="card-desc">输入产品名、上传参考图，生成符合一瓯茶视觉风格的产品图。</p>
+                    <div class="card-tags"><span>Agent 搭建</span><span>Prompt 设计</span><span>产品图生成</span></div>
+                    <a href="https://huggingface.co/spaces/xuanpu-66/a-cup-of-tea" target="_blank" class="btn-enter-agent">进入 Agent →</a>
+                </div>
+                <div class="agent-right-image">
+                    <img src="tea-agent.png" alt="Agent截图" class="agent-screenshot">
+                </div>
+            </div>
+        </div>
+        <div class="aigc-middle-section">
+            <div class="aigc-card sub-card"><div class="card-num">02</div><h3 class="card-title">海报与屏幕广告</h3><p class="card-desc">用 AIGC 快速生成门店活动视觉和屏幕宣传内容。</p><div class="poster-image-container"><img src="tea-poster.png" alt="海报" class="sub-card-image"></div><div class="card-tags"><span>活动海报</span><span>门店屏幕</span><span>视觉生成</span></div></div>
+            <div class="aigc-card sub-card"><div class="card-num">03</div><h3 class="card-title">小红书创意内容</h3><p class="card-desc">把一瓯茶放进游戏化、像素化的视觉场景，制造更适合社媒传播的记忆点。</p><div class="poster-image-container"><img src="tea-minecraft.png" alt="小红书" class="sub-card-image"></div><div class="card-tags"><span>小红书</span><span>创意视觉</span><span>游戏化表达</span></div></div>
+            <div class="aigc-card sub-card"><div class="card-num">04</div><h3 class="card-title">Prompt 与视觉优化</h3><p class="card-desc">持续优化生成逻辑，让产品图更稳定、更统一、更符合品牌调性。</p><div class="poster-image-container"><img src="tea-prompt.png" alt="Prompt" class="sub-card-image prompt-image"></div><div class="card-tags"><span>Prompt</span><span>风格统一</span><span>模型输出优化</span></div></div>
+        </div>
+        <div class="aigc-bottom-section">
+            <div class="avatar-container"><img src="headshot.png" alt="头像" class="avatar-img"></div>
+            <div class="role-info">
+                <h4 class="role-title">我的角色</h4>
+                <div class="role-skills">
+                    <span><i class="icon">⬡</i> AIGC 工作流设计</span><span><i class="icon">🤖</i> Agent 搭建</span>
+                    <span><i class="icon">✨</i> Prompt 优化</span><span><i class="icon">🥤</i> 产品图视觉设计</span>
+                    <span><i class="icon">✏️</i> 小红书内容创作</span>
+                </div>
+            </div>
+            <div class="role-quote-container">
+                <div class="quote-mark left-quote">"</div>
+                <div class="role-quote">把 AI 从单次生成，<br>变成一瓯茶可持续使用的<br>视觉生产流程。</div>
+                <div class="quote-mark right-quote">"</div>
+                <img src="logo.png" alt="logo" class="quote-logo" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== Product 弹窗 ===================== -->
+<div id="productModal" class="aigc-modal hidden">
+    <div class="aigc-modal-content product-modal-content">
+        <button id="closeProductBtn" class="btn-close-aigc">✖</button>
+        <div class="product-header">
+            <div class="header-left">
+                <div class="header-tag">← 产品 / 饮品研发</div>
+                <div class="header-titles">
+                    <div class="title-main"><h1 class="prod-main-title">Product / Drink Lab</h1><h2 class="prod-sub-title">产品 / 饮品研发</h2></div>
+                    <div class="title-divider"></div>
+                    <p class="prod-desc">以产品创新为核心，结合市场洞察与用户需求，<br>打造一杯有记忆点的好茶。</p>
+                </div>
+            </div>
+            <div class="header-right"><img src="logo.png" alt="logo" class="prod-logo" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="product-main-grid">
+            <div class="prod-card carousel-card">
+                <div class="carousel-content-left">
+                    <div class="carousel-indicator"><span id="slideCurrent">01</span> / 05</div>
+                    <h3 class="carousel-title">主导酸奶系列上新</h3>
+                    <p class="carousel-subtitle">从前期调研到后期复盘的完整链路</p>
+                    <div class="slide-content">
+                        <div class="slide-nav-left" id="slidePrev">←</div>
+                        <div class="slide-info">
+                            <h4 class="slide-step-title" id="slideTitle"><span>01</span> 前期调研</h4>
+                            <p class="slide-desc" id="slideDesc">洞察市场与用户需求，明确产品方向与机会点，为研发提供策略依据。</p>
+                        </div>
+                        <div class="slide-nav-right" id="slideNext">→</div>
+                    </div>
+                    <div class="feature-grid">
+                        <div class="feature-box"><span class="f-icon">👁️</span><div class="f-text"><strong>竞品洞察</strong><span>校内外 10+ 品牌<br>产品对比分析</span></div></div>
+                        <div class="feature-box"><span class="f-icon">📊</span><div class="f-text"><strong>口味趋势</strong><span>酸奶系 / 果感 / 冰沙<br>热门风味洞察</span></div></div>
+                        <div class="feature-box"><span class="f-icon">👤</span><div class="f-text"><strong>用户画像</strong><span>学生 / 白领 / 健身党<br>细分需求</span></div></div>
+                        <div class="feature-box"><span class="f-icon">🏷️</span><div class="f-text"><strong>价格带分析</strong><span>主流价格区间<br>与购买力评估</span></div></div>
+                    </div>
+                    <div class="stepper-bar">
+                        <div class="step active" data-step="1"><span>01</span>前期调研</div><div class="step-line"></div>
+                        <div class="step" data-step="2"><span>02</span>产品研发</div><div class="step-line"></div>
+                        <div class="step" data-step="3"><span>03</span>供应链优化</div><div class="step-line"></div>
+                        <div class="step" data-step="4"><span>04</span>外部与定价</div><div class="step-line"></div>
+                        <div class="step" data-step="5"><span>05</span>上线复盘</div>
+                    </div>
+                </div>
+                <div class="carousel-image-right">
+                    <div class="slide-tags-row" id="slideTagsRow">
+                        <span class="slide-tag">市场调研</span><span class="slide-tag">用户洞察</span>
+                        <span class="slide-tag">竞品分析</span><span class="slide-tag">方向确定</span>
+                    </div>
+                    <img src="strawberry.png" alt="主图" class="carousel-hero-img">
+                </div>
+            </div>
+            <div class="prod-right-col">
+                <div class="prod-card grid-display-card">
+                    <div class="card-header"><h4 class="card-title-small">✨ 统一视觉产品图 20+</h4><span class="tag-pill">20+ 款</span></div>
+                    <div class="product-gallery-grid">
+                        <div class="gallery-item"><img src="c1.png" alt="1"></div>
+                        <div class="gallery-item"><img src="c2.png" alt="2"></div>
+                        <div class="gallery-item"><img src="c3.png" alt="3"></div>
+                        <div class="gallery-item"><img src="c4.png" alt="4"></div>
+                        <div class="gallery-item"><img src="c5.png" alt="5"></div>
+                        <div class="gallery-item"><img src="c6.png" alt="6"></div>
+                        <div class="gallery-item"><img src="c7.png" alt="7"></div>
+                        <div class="gallery-item"><img src="c8.png" alt="8"></div>
+                    </div>
+                    <div class="card-footer-text">统一风格 · 水彩质感 · 高级呈现</div>
+                </div>
+                <div class="prod-card collab-card">
+                    <div class="card-header"><h4 class="card-title-small">✨ 薯塔联名福利套餐</h4></div>
+                    <div class="collab-content">
+                        <div class="collab-img-container"><img src="17741779454703_.pic.jpg" alt="联名" class="collab-main-img"></div>
+                        <div class="collab-info">
+                            <span class="tag-orange">套餐</span>
+                            <h5>薯塔联名福利套餐</h5>
+                            <p>一杯一瓯茶酸奶新品 ➕ 薯塔周会员权益</p>
+                            <span class="tag-outline-orange">最多省 ¥8</span>
+                            <div class="collab-features"><span>✓ 联动校内平台渠道</span><span>✓ 覆盖不同受众</span><span>✓ 提升品牌影响与销量</span></div>
+                        </div>
+                    </div>
+                    <div class="collab-bottom">
+                        <div class="collab-mini-img-group"><img src="c2.png" alt="奶茶"><span class="plus-sign">+</span><img src="c5.png" alt="奶茶"></div>
+                        <div class="collab-price">¥24.9 <span>/个起</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-bottom-section">
+            <div class="skill-title">✨ 我的能力</div>
+            <div class="skill-icons"><span>🕒 市场调研</span><span>⚗️ 产品研发</span><span>📦 供应链优化</span><span>🎨 视觉设计</span><span>📊 数据复盘</span></div>
+            <div class="prod-quote-block">
+                <div class="quote-mark left-quote">"</div>
+                <div class="role-quote">从 0 到 1 打造爆款饮品，<br>用数据和设计驱动产品成长。</div>
+                <div class="quote-mark right-quote">"</div>
+                <div class="cup-icon-small">🥤</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== 数据 弹窗 ===================== -->
+<div id="dataModal" class="aigc-modal hidden">
+    <div style="background:#1e0e3e; border-radius:20px; padding:80px 60px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; min-width:400px; min-height:260px; position:relative;">
+        <button id="closeDataBtn" class="btn-close-aigc" style="color:#fff;">✖</button>
+        <div style="font-size:48px;">😄</div>
+        <div style="font-size:28px; font-weight:900; color:#fff; letter-spacing:2px;">即将问世</div>
+        <div style="font-size:16px; color:rgba(255,255,255,0.6); letter-spacing:1px;">敬请期待</div>
+    </div>
+</div>
+<!-- ===================== Marketing 弹窗 ===================== -->
+<div id="marketModal" class="aigc-modal hidden">
+    <div class="market-modal-content">
+        <button id="closeMarketBtn" class="btn-close-aigc">✖</button>
+
+        <!-- 头部 -->
+        <div class="market-header">
+            <div class="market-header-left">
+                <div class="header-tag">🏠 Home / Marketing</div>
+                <h1 class="market-main-title">Marketing / Campaign Lab <span class="title-deco">✒️</span></h1>
+                <p class="market-sub-desc">·· 把新品、节点与品牌故事，变成用户愿意参与的校园活动。</p>
+            </div>
+            <div class="market-header-right">
+                <img src="logo.png" alt="logo" class="prod-logo" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <!-- 三列活动卡片 -->
+        <div class="market-cards-grid">
+
+            <!-- 01 新品活动 -->
+            <div class="market-card">
+                <div class="market-card-header">
+                    <div class="market-card-num">01</div>
+                    <h3 class="market-card-title">新品活动</h3>
+                    <span class="market-card-icon">🍃</span>
+                    <div class="market-card-sparkle">✦</div>
+                </div>
+                <div class="market-photo-grid two-col">
+                    <div class="market-photo-item"><img src="dog-manager.PNG" alt="小狗一日店长"></div>
+                    <div class="market-photo-item"><img src="persimmon.jpg" alt="柿子新品"></div>
+                </div>
+                <p class="market-card-desc">围绕新品上市设计试喝、折扣与互动事件，提高尝试意愿与传播度。</p>
+                <div class="market-tags">
+                    <span>新品试喝</span><span>首发折扣</span><span>门店互动</span><span>视觉宣传</span>
+                </div>
+            </div>
+
+            <!-- 02 限时活动 -->
+            <div class="market-card">
+                <div class="market-card-header">
+                    <div class="market-card-num">02</div>
+                    <h3 class="market-card-title">限时活动</h3>
+                    <span class="market-card-icon">🕐</span>
+                    <div class="market-card-sparkle">✦</div>
+                </div>
+                <div class="market-photo-grid one-col">
+                    <div class="market-photo-item full"><img src="exam-poster.PNG" alt="期末发疯周"></div>
+                </div>
+                <p class="market-card-desc">结合期中期末等校园节点，用有梗的视觉和限时机制制造参与感。</p>
+                <div class="market-tags">
+                    <span>期末周</span><span>限定时段</span><span>校园情绪</span><span>活动海报</span>
+                </div>
+            </div>
+
+            <!-- 03 品牌活动 -->
+            <div class="market-card">
+                <div class="market-card-header">
+                    <div class="market-card-num">03</div>
+                    <h3 class="market-card-title">品牌活动</h3>
+                    <span class="market-card-icon">📢</span>
+                    <div class="market-card-sparkle">✦</div>
+                </div>
+                <div class="market-photo-grid one-col">
+                    <div class="market-photo-item full"><img src="tv-screen.png" alt="门店屏幕"></div>
+                </div>
+                <p class="market-card-desc">通过周年活动、门店屏幕与互动机制，强化品牌记忆与校园讨论度。</p>
+                <div class="market-tags">
+                    <span>八周年</span><span>门店屏幕</span><span>品牌互动</span><span>人流吸引</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 底部能力区 -->
+        <div class="market-bottom">
+            <div class="market-skills-block">
+                <div class="market-skills-title">✦ 我的营销能力</div>
+                <div class="market-skills-list">
+                    <div class="market-skill-item"><span class="msk-icon">📅</span><div><strong>活动策划</strong><small>从主题到执行的全流程设计</small></div></div>
+                    <div class="market-skill-item"><span class="msk-icon">👥</span><div><strong>用户洞察</strong><small>理解校园情绪与需求</small></div></div>
+                    <div class="market-skill-item"><span class="msk-icon">🎨</span><div><strong>视觉传播</strong><small>有梗有料的内容表达</small></div></div>
+                    <div class="market-skill-item"><span class="msk-icon">🏪</span><div><strong>线上线下联动</strong><small>多触点打造参与与闭环</small></div></div>
+                    <div class="market-skill-item"><span class="msk-icon">💬</span><div><strong>品牌互动</strong><small>提升校园讨论与记忆点</small></div></div>
+                </div>
+            </div>
+            <div class="market-quote-block">
+                <div class="big-quote">"</div>
+                <p class="market-quote-text">让活动不止是促销，<br>而是能被记住的校园事件。</p>
+                <div class="market-quote-deco">🥤</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ===================== 第三页：项目经历 ===================== -->
+<section id="page3" class="page page3-loreal">
+    <div class="page3-card">
+    <!-- 左侧 -->
+    <div class="loreal-left">
+        <div class="transition-line loreal-title-line"><h2 class="loreal-title reveal-text">L'ORÉAL<br>BRANDSTORM</h2></div>
+        <div class="transition-line"><div class="loreal-meta reveal-text">2025 欧莱雅 Brandstorm 项目 | Project Leader | 全国 Top 200</div></div>
+        <div class="transition-line"><p class="loreal-desc reveal-text">围绕男青少年极简护肤方案，我主导了从市场洞察、产品方案到 AI 视觉建造与商业落地的完整项目表达。</p></div>
+        <div class="loreal-btns">
+            <button class="loreal-arrow-btn" id="lorealPrev">←</button>
+            <button class="loreal-arrow-btn" id="lorealNext">→</button>
+            <a class="loreal-portfolio-btn" href="ppt.pdf" target="_blank">查看完整项目作品集</a>
+        </div>
+    </div>
+
+    <!-- 右侧卡片叠层 -->
+    <div class="loreal-cards-stack" id="lorealStack">
+
+        <!-- 卡片1：市场洞察 -->
+        <div class="loreal-card lc-1" data-index="0">
+            <div class="lc-tab">市场<br>洞察</div>
+            <div class="lc-inner">
+                <div class="lc-module">项目模块 / 01</div>
+                <h2 class="lc-title">市场洞察</h2>
+                <p class="lc-desc">我们发现，12–19 岁男青少年护肤市场存在明显空缺，现有产品往往步骤复杂、偏成人化，也与年轻男性用户的日常习惯脱节。</p>
+                <div class="lc-rows">
+                    <div class="lc-row"><span class="lc-icon">👥</span><strong>用户群体</strong><span>12–19 岁男青少年</span></div>
+                    <div class="lc-row"><span class="lc-icon">⚠️</span><strong>核心问题</strong><span>护肤看起来复杂，也缺乏共鸣感</span></div>
+                    <div class="lc-row"><span class="lc-icon">🔒</span><strong>关键障碍</strong><span>缺乏建立护肤习惯的动力</span></div>
+                    <div class="lc-row"><span class="lc-icon">💡</span><strong>我们的机会</strong><span>提供更简单、更有引导性、更可信的护肤体验</span></div>
+                </div>
+                <div class="lc-bottom">
+                    <img src="loreal1.png" alt="很多男青少年的护肤起点" style="width: 100%; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片2：产品方案 -->
+        <div class="loreal-card lc-2" data-index="1">
+            <div class="lc-tab">产品<br>方案</div>
+            <div class="lc-inner">
+                <div class="lc-module">项目模块 / 02</div>
+                <h2 class="lc-title">产品方案</h2>
+                <p class="lc-desc">我们以 AI 肤况检测为起点，根据用户当前肤况定制 7 天祛痘方案，并通过微囊精华管与 Rotation Clock 使用机制，帮助男青少年更简单、更持续地完成护肤。</p>
+                <div class="lc-rows">
+                    <div class="lc-row"><span class="lc-icon">🤖</span><strong>方案核心</strong><span>AI 检测 + 定制化 7 天祛痘方案</span></div>
+                    <div class="lc-row"><span class="lc-icon">💊</span><strong>产品载体</strong><span>微囊精华管，承载不同阶段所需成分</span></div>
+                    <div class="lc-row"><span class="lc-icon">🔄</span><strong>使用机制</strong><span>Rotation Clock 引导每日按节奏使用</span></div>
+                    <div class="lc-row"><span class="lc-icon">🛡️</span><strong>方案价值</strong><span>降低护肤决策成本，让护肤变得清晰、简单、可坚持</span></div>
+                </div>
+                <div class="lc-bottom">
+                    <img src="loreal2.png" alt="产品方案手绘" style="width: 100%; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片3：AI视觉构造 -->
+        <div class="loreal-card lc-3" data-index="2">
+            <div class="lc-tab">AI视觉<br>建造</div>
+            <div class="lc-inner">
+                <div class="lc-module">项目模块 / 03</div>
+                <h2 class="lc-title">AI视觉构造</h2>
+                <p class="lc-desc">为了将 Unicore 从概念转化为可展示的产品视觉，我在项目过程中学习 Blender 建模，并结合 AI 生成、材质渲染与场景构图，搭建出统一的产品视觉表达。</p>
+                <div class="lc-rows">
+                    <div class="lc-row"><span class="lc-icon">🎯</span><strong>构造目标</strong><span>将抽象产品概念转化为直观可展示的视觉资产</span></div>
+                    <div class="lc-row"><span class="lc-icon">📖</span><strong>学习动作</strong><span>快速学习 Blender 建模、基础材质与渲染，完成 Unicore 产品灰模搭建</span></div>
+                    <div class="lc-row"><span class="lc-icon">📦</span><strong>视觉产出</strong><span>产品模型、管身结构、微囊质感与场景图</span></div>
+                    <div class="lc-row"><span class="lc-icon">⭐</span><strong>能力体现</strong><span>把想法转化为可沟通、可展示、可落地的视觉方案</span></div>
+                </div>
+                <div class="lc-bottom">
+                    <img src="loreal3.png" alt="AI视觉手绘" style="width: 100%; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片4：商业落地 -->
+        <div class="loreal-card lc-4" data-index="3">
+            <div class="lc-tab">商业<br>落地</div>
+            <div class="lc-inner">
+                <div class="lc-module">项目模块 / 04</div>
+                <h2 class="lc-title">商业落地</h2>
+                <p class="lc-desc">我们围绕男青少年自身与其身边的"她"共同构建传播路径，从目标人群、购买场景、渠道触点到品牌沟通，设计了更适合 Unicore 进入市场的落地方案。</p>
+                <div class="lc-rows">
+                    <div class="lc-row"><span class="lc-icon">👥</span><strong>目标人群</strong><span>12–19 岁男青少年 + 身边女性影响者</span></div>
+                    <div class="lc-row"><span class="lc-icon">🏪</span><strong>渠道触点</strong><span>校园场景、社交平台、线下零售与电商渠道</span></div>
+                    <div class="lc-row"><span class="lc-icon">💬</span><strong>沟通策略</strong><span>用"简单开始、按天坚持、可视化改善"降低护肤心理门槛</span></div>
+                    <div class="lc-row"><span class="lc-icon">📈</span><strong>商业价值</strong><span>从产品创新延伸到用户教育、复购习惯与品牌年轻化表达</span></div>
+                </div>
+                <div class="lc-bottom">
+                    <img src="loreal4.png" alt="商业落地手绘" style="width: 100%; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 第四页：PERSONAL EXPERIENCE 蓝色过渡 -->
+    <section id="page4" class="page page4-blue">
+        <div class="page4-content">
+            <div class="transition-line page4-line"><span class="page4-text">PERSONAL</span></div>
+            <div class="transition-line page4-line"><span class="page4-text">EXPERIENCE</span></div>
+        </div>
+    </section>
+
+    <!-- 第五页：旅游照片 -->
+<section id="page5" class="page page5-travel">
+    <div class="p5-stage">
+        <svg class="ecg-svg" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline class="ecg-line" points="0,60 180,60 200,60 210,20 220,100 230,60 260,60 270,30 280,90 290,60 440,60 450,10 460,110 470,60 620,60 630,35 640,85 650,60 800,60 810,15 820,105 830,60 980,60 990,40 1000,80 1010,60 1160,60 1170,20 1180,100 1190,60 1440,60"/>
+        </svg>
+        <div class="p5-photos">
+
+            <div class="p5-cityview active" data-city="开罗">
+                <div class="p5-photo p5-photo-left"><img style="height:42vh; width:auto;" src="cairo-food.png" alt="开罗美食"></div>
+                <div class="p5-photo p5-photo-mid"><img style="height:42vh; width:auto;" src="cairo-temple.JPG" alt="开罗古迹"></div>
+                <div class="p5-photo p5-photo-right"><img style="height:42vh; width:auto;" src="cairo-sea.JPG" alt="开罗海边"></div>
+                <div class="p5-city-label"><span class="p5-label-dot"></span>开罗 Cairo</div>
+            </div>
+
+            <div class="p5-cityview" data-city="伦敦">
+                <div class="p5-photo p5-photo-left" style="left:6%; top:48%; transform:translateY(-50%) rotate(-6deg)"><img style="height:28vh; width:auto;"src="ying1.JPG" alt="伦敦桥"></div>
+                <div class="p5-photo p5-photo-mid" style="left:50%; top:52%; transform:translate(-50%,-50%) rotate(1.5deg)"><img style="height:42vh; width:auto;" src="ying2.JPG" alt="骑马"></div>
+                <div class="p5-photo p5-photo-right" style="right:5%; top:46%; transform:translateY(-50%) rotate(5deg)"><img style="height:28vh; width:auto;" src="ying3.JPG" alt="牛津"></div>
+                <div class="p5-city-label"><span class="p5-label-dot"></span>伦敦 London</div>
+            </div>
+
+            <div class="p5-cityview" data-city="天津">
+                <div class="p5-photo p5-photo-left" style="left:9%; top:50%; transform:translateY(-50%) rotate(-3deg)"><img style="height:28vh; width:auto;"src="tianjin-parents.JPG" alt="天津"></div>
+                <div class="p5-photo p5-photo-mid" style="left:50%; top:49%; transform:translate(-50%,-50%) rotate(-1deg)"><img style="height:28vh; width:auto;" src="nankai-school.JPG" alt="南开中学"></div>
+                <div class="p5-photo p5-photo-right" style="right:8%; top:52%; transform:translateY(-50%) rotate(6deg)"><img style="height:28vh; width:auto;" src="band.jpg" alt="乐队"></div>
+                <div class="p5-city-label"><span class="p5-label-dot"></span>天津 Tianjin</div>
+            </div>
+
+            <div class="p5-cityview" data-city="长白山">
+                <div class="p5-photo p5-photo-left" style="left:7%; top:47%; transform:translateY(-50%) rotate(-7deg)"><img style="height:28vh; width:auto;"src="chang1.jpg" alt="长白山"></div>
+                <div class="p5-photo p5-photo-mid" style="left:50%; top:53%; transform:translate(-50%,-50%) rotate(2deg)"><img style="height:35vh; width:auto;" src="chang2.png" alt="缆车"></div>
+                <div class="p5-photo p5-photo-right" style="right:6%; top:50%; transform:translateY(-50%) rotate(-4deg)"><img style="height:42vh; width:auto;" src="chang3.JPG" alt="雪人"></div>
+                <div class="p5-city-label"><span class="p5-label-dot"></span>长白山 Changbai</div>
+            </div>
+
+            <div class="p5-cityview" data-city="首尔">
+                <div class="p5-photo p5-photo-left" style="left:8%; top:52%; transform:translateY(-50%) rotate(-2deg)"><img style="height:42vh; width:auto;" src="seoul1.png" alt="首尔街景"></div>
+                <div class="p5-photo p5-photo-mid" style="left:50%; top:48%; transform:translate(-50%,-50%) rotate(3deg)"><img style="height:42vh; width:auto;" src="seoul2.png" alt="演唱会"></div>
+                <div class="p5-photo p5-photo-right" style="right:7%; top:51%; transform:translateY(-50%) rotate(-5deg)"><img style="height:42vh; width:auto;" src="seoul3.png" alt="首尔"></div>
+                <div class="p5-city-label"><span class="p5-label-dot"></span>首尔 Seoul</div>
+            </div>
+
+            <div class="p5-cityview" data-city="重庆">
+                <div class="p5-photo p5-photo-left" style="left:6%; top:49%; transform:translateY(-50%) rotate(-5deg)"><img style="height:28vh; width:auto;" src="chongqing1.png" alt="重庆"></div>
+                <div class="p5-photo p5-photo-mid" style="left:50%; top:51%; transform:translate(-50%,-50%) rotate(-2deg)"><img style="height:28vh; width:auto;" src="chongqing2.JPG" alt="签名旗"></div>
+                <div class="p5-photo p5-photo-right" style="right:9%; top:47%; transform:translateY(-50%) rotate(4deg)"><img style="height:28vh; width:auto;" src="chongqing3.JPG" alt="磁器口"></div>
+                <div class="p5-city-label"><span class="p5-label-dot"></span>重庆 Chongqing</div>
+            </div>
+
+            <div class="p5-cityview" data-city="阿勒泰">
+                <div class="p5-photo p5-photo-left" style="left:10%; top:51%; transform:translateY(-50%) rotate(-4deg)"><img style="height:28vh; width:auto;" src="altay1.png" alt="阿勒泰"></div>
+                <div class="p5-photo p5-photo-mid" style="left:50%; top:50%; transform:translate(-50%,-50%) rotate(1deg)"><img style="height:42vh; width:auto;" src="altay2.JPG" alt="饺子"></div>
+                <div class="p5-photo p5-photo-right" style="right:6%; top:48%; transform:translateY(-50%) rotate(-6deg)"><img style="height:42vh; width:auto;" src="altay3.png" alt="湖边"></div>
+                <div class="p5-city-label"><span class="p5-label-dot"></span>阿勒泰 Altay</div>
+            </div>
+
+            <div class="p5-cityview" data-city="西双版纳">
+                <div class="p5-photo p5-photo-left" style="left:7%; top:46%; transform:translateY(-50%) rotate(-3deg)"><img style="height:42vh; width:auto;" src="xishuangbanna1.png" alt="西双版纳"></div>
+                <div class="p5-photo p5-photo-mid" style="left:50%; top:52%; transform:translate(-50%,-50%) rotate(-1.5deg)"><img style="height:42vh; width:auto;" src="xishuangbanna2.JPG" alt="热带建筑"></div>
+                <div class="p5-photo p5-photo-right" style="right:8%; top:50%; transform:translateY(-50%) rotate(7deg)"><img style="height:42vh; width:auto;" src="xishuangbanna3.JPG" alt="丛林溪流"></div>
+                <div class="p5-city-label"><span class="p5-label-dot"></span>西双版纳 Xishuangbanna</div>
+            </div>
+
+        </div>
+        <div class="p5-cities">
+            <div class="p5-city" data-city="伦敦"><span class="p5-dot" style="background:#f4a0b0"></span>伦敦</div>
+            <div class="p5-city" data-city="天津"><span class="p5-dot" style="background:#a0a8f4"></span>天津</div>
+            <div class="p5-city" data-city="长白山"><span class="p5-dot" style="background:#c4a0f4"></span>长白山</div>
+            <div class="p5-city" data-city="首尔"><span class="p5-dot" style="background:#b0b0b0"></span>首尔</div>
+            <div class="p5-city" data-city="重庆"><span class="p5-dot" style="background:#f4d0a0"></span>重庆</div>
+            <div class="p5-city" data-city="阿勒泰"><span class="p5-dot" style="background:#c0c0c0"></span>阿勒泰</div>
+            <div class="p5-city active" data-city="开罗"><span class="p5-dot" style="background:#7a1a2a"></span>开罗</div>
+            <div class="p5-city" data-city="西双版纳"><span class="p5-dot" style="background:#c4b0f4"></span>西双版纳</div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
